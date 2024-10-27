@@ -1,16 +1,18 @@
+// routes/userRoutes.js
+
 import express from "express";
-import User from "../models/User.js"; // Correct import of User model
-import bcrypt from "bcryptjs"; // Correctly spelled bcrypt
+import User from "../models/User.js";
+import bcrypt from "bcryptjs"; 
 import jwt from "jsonwebtoken";
 
-const router = new express.Router();
+const router = express.Router();
 
 // Register user
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10); // Use bcrypt
+    const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ name, email, password: hashedPassword });
     await user.save();
 
@@ -36,6 +38,16 @@ router.post('/login', async (req, res) => {
     res.json({ token, user });
   } catch (error) {
     res.status(500).json({ message: 'Error logging in' });
+  }
+});
+
+// Get all users
+router.get('/', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching users' });
   }
 });
 
