@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js'; // Import user routes
+import productRoutes from './routes/productRoutes.js';
 
 dotenv.config();
 
@@ -11,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URI)
   
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
@@ -21,6 +22,9 @@ app.get('/', (req, res) => {
 
 // User routes
 app.use('/api/users', userRoutes); // Use user routes
+
+app.use('/api/products', productRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
