@@ -1,0 +1,27 @@
+{
+  "name": "e-commerce-app",
+  "version": "1.0.0",
+  "description": "Node.js and npm are installed\r     I am using MongoDB for cloud storage\r ### Initial setting up the back end\r     E-Commerce-App is the main folder, it contains the server folder for the backend and the client folder for the frontend.\r     1- mkdir server\r     2- cd server\r     3- npm init -y: to initialize NPM on a new project\r     4- npm install express mongoose dotenv bcryptjs jsonwebtoken cors and\r         npm install nodemon --save-dev: to install Backend Dependencies such as :\r             Express: Web framework for Node.js\r             Mongoose: MongoDB object modeling tool\r             Dotenv: Loads environment variables\r             Bcryptjs: Password hashing\r             Jsonwebtoken: For authentication (JWT)\r             Cors: Middleware for cross-origin requests\r             Nodemon: is a command-line tool that can automatically restart Node.js applications when changes are detected in the project directory",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
