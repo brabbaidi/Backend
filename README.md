@@ -13,8 +13,6 @@
             Express: Web framework for Node.js
             Mongoose: MongoDB object modeling tool
             Dotenv: Loads environment variables
-            Bcryptjs: Password hashing
-            Jsonwebtoken: For authentication (JWT)
             Cors: Middleware for cross-origin requests
             Nodemon: is a command-line tool that can automatically restart Node.js applications when changes are detected in the project directory
 
